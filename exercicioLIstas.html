@@ -1,0 +1,56 @@
+<html>
+
+<body>
+    <title>Exercicio de listas </title>
+    <h1>Exercicio de listas</h1>
+
+    <ul>
+        <li> Celular REDMi 9S </li>
+        <ul>
+            <li>
+                <span jns-folder>Notas</span>
+
+                <ul>
+                    <li>Custo-Benefício: 8/10</li>
+                    <li>Hardware: 8.4/10</li>
+                    <li>Tela: 8.4/10</li>
+                </ul>
+
+            <li>
+                <span jns-folder>Tela</span>
+
+                <ul>
+                    <li>Polegadas: 6.67</li>
+                    <li>Resolução: 1800x2400 pixel</li>
+                    <li>IPS LCD</li>
+                </ul>
+
+            <li>
+                <span jns-folder>Funções</span>
+
+                <ul>
+                    <li>Radio FM</li>
+                    <li>Tv</li>
+                    <li>Viva voz</li>
+                </ul>
+            </li>
+            </li>
+            </li>
+            </li>
+        </ul>
+    </ul>
+    <link rel="stylesheet" href="style.css">
+</body>
+<script>
+    document.querySelectorAll('[jns-folder]').forEach(folder => {
+        folder.onclick = function (e) {
+            const elementosDoul = folder.nextElementSibling /*Pegar todos os elementos depois do ul*/
+            const telaDisplay = elementosDoul.style.display /*podendo ser none ou block*/
+            elementosDoul.style.display = telaDisplay === 'none' ? 'block' : 'none'
+            /*Se algum dos elementos forem falsos ele ativa o 'none' que indica
+            que o ul principal está aberta, então ele obriga a fechar o bloco*/
+        }
+    })
+</script>
+
+</html>
